@@ -1,0 +1,5 @@
+różnice:
+
+- Obie implementacje mają podobne struktury, ale różnią się niektórymi detalami, takimi jak sposób iteracji po tablicy (pętla for w Java, pętla while w Kotlin) i adnotacje Kotlin użyte w bytecode Kotlin.
+- Pierwszy bytecode ma flagi dostępu ustawione na 0x20, co oznacza, że ​​jest dostępna tylko w ramach pakietu. Drugi bytecode ma flagi dostępu ustawione na 0x31, co oznacza, że ​​jest publiczna i dostępna z zewnątrz pakietu.
+- Pierwszy bytecode ma wersję 64.0, podczas gdy drugi bytecode ma wersję 52.0. Wersje te odzwierciedlają różne wersje języków Java i Kotlin.

@@ -1,0 +1,157 @@
+// class version 64.0 (64)
+// access flags 0x20
+class BubbleSort {
+
+  // compiled from: BubbleSortJava.java
+
+  // access flags 0x0
+  <init>()V //Konstruktor klasy BubbleSort (inicjalizacja obiektu)
+   L0
+    LINENUMBER 1 L0
+    ALOAD 0 //Wczytanie referencji do obiektu (this) na stos
+    INVOKESPECIAL java/lang/Object.<init> ()V //Wywołanie konstruktora klasy nadrzędnej java.lang.Object
+    RETURN //Zakończenie konstruktora
+   L1
+    LOCALVARIABLE this LBubbleSort; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x0
+  bubbleSort([I)V //Deklaracja metody bubbleSort przyjmującej tablicę int jako argument i zwracającej void
+   L0
+    LINENUMBER 4 L0
+    ALOAD 1 //Wczytanie referencji do pierwszego argumentu (tablicy) na stos
+    ARRAYLENGTH //Pobranie długości tablicy i umieszczenie na stosie
+    ISTORE 2 //Zapisanie wartości ze stosu do lokalnej zmiennej o indeksie 2
+   L1
+    LINENUMBER 5 L1
+    ICONST_0 //Wczytanie wartości stałej 0 na stos
+    ISTORE 3 //Zapisanie wartości ze stosu do lokalnej zmiennej o indeksie 3
+   L2
+   FRAME APPEND [I I]
+    ILOAD 3 //Wczytanie wartości lokalnej zmiennej o indeksie 3 na stos
+    ILOAD 2 //Wczytanie wartości lokalnej zmiennej o indeksie 2 na stos
+    ICONST_1 //Wczytanie wartości stałej 1 na stos
+    ISUB //Odejmowanie dwóch wartości ze stosu (długość tablicy - 1)
+    IF_ICMPGE L3 //Skok do linii 3, jeśli wartość ze stosu jest większa lub równa zero (warunek zakończenia pętli)
+   L4
+    LINENUMBER 6 L4
+    ICONST_0 //Wczytanie wartości stałej 0 na stos
+    ISTORE 4 //Zapisanie wartości ze stosu do lokalnej zmiennej o indeksie 4
+   L5
+   FRAME APPEND [I]
+    ILOAD 4 //Wczytanie wartości lokalnej zmiennej o indeksie 4 na stos
+    ILOAD 2 //Wczytanie wartości lokalnej zmiennej o indeksie 2 na stos
+    ILOAD 3 //Wczytanie wartości lokalnej zmiennej o indeksie 3 na stos
+    ISUB //Odejmowanie dwóch wartości ze stosu (długość tablicy - 1 - bieżący indeks)
+    ICONST_1 //Wczytanie wartości stałej 1 na stos
+    ISUB //Odejmowanie dwóch wartości ze stosu (długość tablicy - 2 - bieżący indeks)
+    IF_ICMPGE L6 //Skok do linii 6, jeśli wartość ze stosu jest większa lub równa zero (warunek zakończenia pętli)
+   L7
+    LINENUMBER 7 L7
+    ALOAD 1 //Wczytanie referencji do tablicy na stos (element i-tego indeksu)
+    ILOAD 4 //Wczytanie wartości lokalnej zmiennej o indeksie 4 na stos (indeks i)
+    IALOAD //Pobranie wartości z tablicy o indeksie i i umieszczenie na stosie
+    ALOAD 1 //Wczytanie referencji do tablicy na stos (element (i+1)-tego indeksu)
+    ILOAD 4 //Wczytanie wartości lokalnej zmiennej o indeksie 4 na stos (indeks i)
+    ICONST_1 //Wczytanie wartości stałej 1 na stos
+    IADD //Dodawanie dwóch wartości ze stosu (indeks i + 1)
+    IALOAD //Pobranie wartości z tablicy o indeksie (i+1) i umieszczenie na stosie
+    IF_ICMPLE L8 //Skok do linii 8, jeśli wartość ze stosu jest mniejsza lub równa zero (warunek zamiany elementów)
+   L9
+    LINENUMBER 8 L9
+    ALOAD 1 //Wczytanie referencji do tablicy na stos
+    ILOAD 4 //Wczytanie wartości lokalnej zmiennej o indeksie 4 na stos (indeks i)
+    IALOAD //Pobranie wartości z tablicy o indeksie i i umieszczenie na stosie
+    ISTORE 5 //Zapisanie wartości ze stosu do lokalnej zmiennej o indeksie 5 (tymczasowa zmienna)
+   L10
+    LINENUMBER 9 L10
+    ALOAD 1 //Wczytanie referencji do tablicy na stos
+    ILOAD 4 //Wczytanie wartości lokalnej zmiennej o indeksie 4 na stos (indeks i)
+    ALOAD 1 //Wczytanie referencji do tablicy na stos
+    ILOAD 4 //Wczytanie wartości lokalnej zmiennej o indeksie 4 na stos (indeks i)
+    ICONST_1 //Wczytanie wartości stałej 1 na stos
+    IADD // Dodawanie dwóch wartości ze stosu (indeks i + 1)
+    IALOAD // Pobranie wartości z tablicy o indeksie (i+1) i umieszczenie na stosie
+    IASTORE // Zapisanie wartości ze stosu do tablicy o indeksie i
+   L11
+    LINENUMBER 10 L11
+    ALOAD 1 // Wczytanie referencji do tablicy na stos
+    ILOAD 4 // Wczytanie wartości lokalnej zmiennej o indeksie 4 na stos (indeks i)
+    ICONST_1 //Wczytanie wartości stałej 1 na stos
+    IADD // Dodawanie dwóch wartości ze stosu (indeks i + 1)
+    ILOAD 5 // Wczytanie wartości lokalnej zmiennej o indeksie 5 na stos (tymczasowa zmienna)
+    IASTORE //Zapisanie wartości ze stosu do tablicy o indeksie (i+1)
+   L8
+    LINENUMBER 6 L8
+   FRAME SAME
+    IINC 4 1 //Zwiększenie wartości lokalnej zmiennej o indeksie 4 o 1 (i++)
+    GOTO L5 //Skok do linii 5
+   L6
+    LINENUMBER 5 L6
+   FRAME CHOP 1
+    IINC 3 1 //Zwiększenie wartości lokalnej zmiennej o indeksie 3 o 1 (i++)
+    GOTO L2 //Skok do linii 2
+   L3
+    LINENUMBER 12 L3
+   FRAME CHOP 1
+    RETURN //Zakończenie metody bubbleSort
+   L12
+    LOCALVARIABLE temp I L10 L8 5
+    LOCALVARIABLE j I L5 L6 4
+    LOCALVARIABLE i I L2 L3 3
+    LOCALVARIABLE this LBubbleSort; L0 L12 0
+    LOCALVARIABLE arr [I L0 L12 1
+    LOCALVARIABLE n I L1 L12 2
+    MAXSTACK = 5
+    MAXLOCALS = 6
+
+  // access flags 0x9
+  public static main([Ljava/lang/String;)V
+   L0
+    LINENUMBER 16 L0
+    NEW BubbleSort //Utworzenie nowego obiektu klasy BubbleSort
+    DUP //Duplikacja referencji do utworzonego obiektu na stosie
+    INVOKESPECIAL BubbleSort.<init> ()V //Wywołanie konstruktora klasy BubbleSort
+    ASTORE 1
+   L1
+    LINENUMBER 17 L1
+    ICONST_5
+    NEWARRAY T_INT
+    DUP
+    ICONST_0
+    ICONST_5
+    IASTORE
+    DUP
+    ICONST_1
+    ICONST_1
+    IASTORE
+    DUP
+    ICONST_2
+    ICONST_4
+    IASTORE
+    DUP
+    ICONST_3
+    ICONST_2
+    IASTORE
+    DUP
+    ICONST_4
+    BIPUSH 8
+    IASTORE
+    ASTORE 2
+   L2
+    LINENUMBER 18 L2
+    ALOAD 1 // Wczytanie referencji do obiektu BubbleSort na stos
+    ALOAD 2 //Wczytanie referencji do tablicy arr na stos
+    INVOKEVIRTUAL BubbleSort.bubbleSort ([I)V //Wywołanie metody bubbleSort na obiekcie BubbleSort
+   L3
+    LINENUMBER 19 L3
+    RETURN //Zakończenie metody main
+   L4
+   //Deklaracja lokalnych zmiennych args, ob i arr
+    LOCALVARIABLE args [Ljava/lang/String; L0 L4 0
+    LOCALVARIABLE ob LBubbleSort; L1 L4 1
+    LOCALVARIABLE arr [I L2 L4 2
+    MAXSTACK = 4
+    MAXLOCALS = 3
+}
